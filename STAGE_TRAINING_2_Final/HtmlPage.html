@@ -1,0 +1,46 @@
+﻿<!-- <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="Scripts/jaydata.js"></script>
+    <script>
+        $data.Entity.extend("$org.types.Department",
+        {
+            Id: { type: "int", key: true, computed: true },
+            Name: { type: "string", required: true },
+            Employees: { type: Array,
+                         elementType: "$org.types.Employee",
+                         inverseProperty: "Department" }
+        });
+
+        $data.Entity.extend("$org.types.Employee",
+        {
+            Id: { type: "int", key: true, computed: true },
+            Name: { type: "string", required: true },
+            Department: { type: $org.types.Department, inverseProperty: 'Employees' }
+        });
+
+        $data.EntityContext.extend("$org.types.OrgContext", {
+            Department: { type: $data.EntitySet, elementType: $org.types.Department },
+            Employee: { type: $data.EntitySet, elementType: $org.types.Employee }
+        });
+
+        $org.context = new $org.types.OrgContext({
+            name: "webSql", databaseName: "OrgDatabase"
+        });
+
+        var department = new $org.types.Department({ Name: 'Department1' });
+        var employee = new $org.types.Employee({ Name: 'John Smith' });
+        department.Employees = [employee];
+
+        $org.context.onReady(function () {
+            $org.context.Department.add(department);
+            $org.context.saveChanges();
+        });
+
+    </script>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html> -->

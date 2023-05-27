@@ -1,0 +1,337 @@
+﻿<!DOCTYPE>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sales Services</title>
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app.min.1.css" rel="stylesheet">
+    <link href="css/app.min.2.css" rel="stylesheet">
+
+</head>
+<body class="toggled sw-toggled">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="logo hidden-xs">
+                <a href="index.html">Sales Services</a>
+            </li>
+
+            <li class="pull-right">
+                <ul class="top-menu">
+                    <li id="toggle-width">
+                        <div class="toggle-switch">
+                            <input id="tw-switch" type="checkbox" hidden="hidden">
+                            <label for="tw-switch" class="ts-helper"></label>
+                        </div>
+                    </li>
+
+                    <li id="top-search">
+                        <a href=""><i class="tm-icon zmdi zmdi-search"></i></a>
+                    </li>
+
+
+                    <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+                        <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <!-- Top Search Content -->
+        <div id="top-search-wrap">
+            <div class="tsw-inner">
+                <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+                <input type="text">
+            </div>
+        </div>
+    </header>
+
+    <section id="main" data-layout="layout-1">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <div class="profile-menu">
+                <a href="">
+                    <div class="profile-pic">
+                        <img src="media/img/profile-menu.png" alt="">
+                    </div>
+
+                    <div class="profile-info">
+                        Klaus Technicker
+
+                        <i class="zmdi zmdi-caret-down"></i>
+                    </div>
+                </a>
+
+                <ul class="main-menu">
+                    <li>
+                        <a href=""><i class="zmdi zmdi-account"></i> Data Synchronization</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="zmdi zmdi-input-antenna"></i> My info</a>
+                    </li>
+
+                    <li>
+                        <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="main-menu">
+                <li>
+                    <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                </li>
+
+                <li class="sub-menu toggled active">
+                    <a href=""><i class="zmdi zmdi-view-list"></i> Rental Devices</a>
+
+                    <ul>
+                        <li><a href="rentalDevice.html">Rental Devices</a></li>
+                        <li class="active"><a href="rentalContract.html">Rental Contracts</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+
+        <section id="content">
+            <div class="container">
+                <div class="block-header">
+
+
+                    <ul class="actions">
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-trending-up"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-check-all"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" data-toggle="dropdown">
+                                <i class="zmdi zmdi-more-vert"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="">Refresh</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div data-bind="foreach: rentalContract">
+              <div class="card">
+                    <div class="card-header ch-alt">
+                        <h2>Contract Information </h2>
+                    </div>
+                    <div class="card-body card-padding">
+
+                        <div class="pmbb-view">
+                            <dl class="dl-horizontal">
+                                <dt>contract number</dt>
+                                <dd> <span data-bind="text: numberContract"></span></dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Start/End contract date</dt>
+                                <dd><span data-bind="text: startDate"></span> - <span data-bind="text: endDate"></span></dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Person name</dt>
+                                <dd data-bind="text: personName" ></dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Person Telephone</dt>
+                                <dd data-bind="text: personTel" ></dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Person Email adress</dt>
+                                <dd data-bind="text: personEmail" > </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Person adress</dt>
+                                <dd data-bind="text: personAddress" > </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt>Delivery adress</dt>
+                                <dd data-bind="text: personDelivery"></dd>
+                            </dl>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+                    <div class="card">
+                        <div class="lv-header-alt clearfix">
+
+                            <h2 class="lvh-label hidden-xs">Rental devices</h2>
+
+                        
+
+                            <ul class="lv-actions actions">
+                                
+
+                                <li class="dropdown">
+                                    <a href="" data-toggle="dropdown" >
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+
+                                            <a href="rentalDeviceList.html" data-bind="attr: { href: 'rentalDeviceList.html?numberContract=' + numberContract() }">
+                                                Add devise
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+
+                                        <th><a href="">Name</a></th>
+                                        <th><a href="">Price</a></th>
+                                        <th><a href="">Status</a></th>
+
+                                    </tr>
+                                </thead>
+                                <tbody  data-bind="foreach: rentalDevises">
+
+                                    <tr>
+                                        <td data-bind="text: name"></td>
+                                        <td data-bind="text: price"></td>
+                                        <td data-bind="text: status"> </td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                <div class="card">
+                    <div class="card-header ch-alt">
+                        <h2>Contract history</h2>
+                    </div>
+                    <div class="timeline" data-bind="foreach: historyContracts">
+
+
+                        <div class="t-view" data-tv-type="text">
+                            <div class="tv-header media">
+
+                                <div class="media-body p-t-5">
+                                    <strong class="d-block">Contract <span data-bind="text: actionHistory"></span> by <span data-bind="text: userHistory"></span></strong>
+                                    <small class="c-gray"><span data-bind="text: dateActionHistory"></span> at <span data-bind="text: heureActionHistory"></span></small>
+                                </div>
+
+                                <ul class="actions m-t-20 hidden-xs">
+                                    <li class="dropdown">
+                                        <a href="" data-toggle="dropdown">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+
+
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tv-body">
+                                <p  data-bind="text: noteActionHistory"></p>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="clearfix"></div>
+
+
+                    </div>
+                 </div>
+                </div>
+
+
+                </div>
+        </section>
+
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2015 Material Admin
+
+        <ul class="f-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Reports</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </footer>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="preloader pls-blue">
+            <svg class="pl-circular" viewBox="25 25 50 50">
+                <circle class="plc-path" cx="50" cy="50" r="20" />
+            </svg>
+
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/demo.js"></script>
+    <!-- knockout Libraries -->
+    <script type='text/javascript' src="./js/jaydata/knockout.js"></script>
+   <!-- jaydata and SqLite  Libraries -->
+   <script src="./js/jaydata/jaydata.js"></script>
+   <script src="./js/jaydata/datajs-1.1.2.js"></script>
+   <script src="./js/jaydata/jaydataknockout.js"></script>
+   <script src="./js/jaydata/SqLiteProProvider.js"></script>
+
+    <script src="js/rentalContractDetail.js"></script>
+    
+
+
+
+</body>
+</html>

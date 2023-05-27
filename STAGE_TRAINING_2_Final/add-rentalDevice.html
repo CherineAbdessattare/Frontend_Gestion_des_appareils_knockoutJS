@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Admin</title>
+
+    <!-- Vendor CSS -->
+    <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+    <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/app.min.1.css" rel="stylesheet">
+    <link href="css/app.min.2.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+    <script type='text/javascript' src="./js/jaydata/knockout.js"></script>
+
+     <!-- jaydata and SqLite  Libraries -->
+     <script src="./js/jaydata/jaydata.js"></script>
+     <script src="./js/jaydata/datajs-1.1.2.js"></script>
+     <script src="./js/jaydata/jaydataknockout.js"></script>
+     <script src="./js/jaydata/SqLiteProProvider.js"></script>
+
+
+
+
+    <!-- <script type="text/javascript">
+
+
+        $data.Entity.extend("Devise", {
+            name: { type: String, required: true, computed: true, maxLength: 200 },
+            price: { type: "number", required: true },
+            status: { type: String }
+        });
+
+        var DeviseDB = $data.EntityContext.extend("DeviseDB", {
+            DeviseTable: { type: $data.EntitySet, elementType: "Devise" }
+        });
+        var db = new DeviseDB({ provider: "webSql", databaseName: "DeviseDB", dbCreation: $data.storageProviders.DbCreationType });
+
+      
+        function addDevise() {
+            //check to ensure the mydb object has been created
+
+            if (db) {
+
+                var name = document.getElementById("nameDeviseID").value;
+                var price = document.getElementById("priceDeviseID").value;
+                var status = document.getElementById("statusDeviseID").value;
+
+                if (name !== "" && price !== "") {
+
+                 db.DeviseTable.addMany([
+                        {
+                            name: name,
+                            price: price,
+                            status: status
+                        }
+
+
+                    ]);
+                 db.saveChanges().then(function () {
+                     var rfe = [];
+                     db.DeviseTable.forEach(function (x) { rfe.push(x); }).then(function () { renderResult("forEach", rfe); });
+                     db.DeviseTable.toArray(function (r) { renderResult("toArray", r); });
+                     db.DeviseTable.first("", null, function (r) { renderResult("first", r); });
+                     db.DeviseTable.single("it.ExtensionValues.Due !== null", null, function (r) { renderResult("single", r); });
+                 });
+               
+                }
+                else {
+                    alert("You must enter a name and price!");
+                }
+            } else {
+                alert("db not found, your browser does not support web sql!");
+            }
+        }
+    </script> -->
+
+
+
+
+
+
+</head>
+<body class="toggled sw-toggled">
+    <header id="header" class="clearfix" data-current-skin="blue">
+        <ul class="header-inner">
+            <li id="menu-trigger" data-trigger="#sidebar">
+                <div class="line-wrap">
+                    <div class="line top"></div>
+                    <div class="line center"></div>
+                    <div class="line bottom"></div>
+                </div>
+            </li>
+
+            <li class="logo hidden-xs">
+                <a href="index.html">Task 2</a>
+            </li>
+
+            <li class="pull-right">
+                <ul class="top-menu"></ul>
+            </li>
+        </ul>
+
+
+        <!-- Top Search Content -->
+        <div id="top-search-wrap">
+            <div class="tsw-inner">
+                <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+                <input type="text">
+            </div>
+        </div>
+    </header>
+
+    <section id="main">
+        <aside id="sidebar" class="sidebar c-overflow">
+            <div class="profile-menu">
+
+                <div class="profile-pic" style="width:100%;">
+                    <img src="media\img/ex.jpg" alt="" style="width:100%; height:100%;">
+                </div>
+
+            </div>
+            <!-- <div class="profile-menu">
+                 <a href="">
+                     <div class="profile-pic">
+                         <img src="img/profile-pics/1.jpg" alt="">
+                     </div>
+
+                     <div class="profile-info">
+                         Malinda Hollaway
+
+                         <i class="zmdi zmdi-caret-down"></i>
+                     </div>
+                 </a>
+
+                 <ul class="main-menu">
+                     <li>
+                         <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                     </li>
+                     <li>
+                         <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                     </li>
+                     <li>
+                         <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                     </li>
+                     <li>
+                         <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                     </li>
+                 </ul>
+             </div>-->
+
+            <ul class="main-menu">
+                <li class="active">
+                    <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                </li>
+                <li class="sub-menu">
+                    <a href=""><i class="zmdi zmdi-view-compact"></i> Rental</a>
+
+                    <ul>
+                        <li><a href="rental-devices.html">Rental devices</a></li>
+                        <li><a href="rental-contracts.html">Rental contracts</a></li>
+
+                    </ul>
+                </li>
+
+
+
+            </ul>
+        </aside>
+
+
+        <section id="content">
+
+
+            <div class="container">
+                <!--     <div class="col-sm-8">-->
+
+              
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>
+                           Add a rental device 
+                        </h2>
+                    </div>
+
+                    <div class="card-body card-padding">
+                        <form role="form">
+                            <div class="form-group fg-line">
+                                <label for="exampleInputEmail1">Name of the device</label>
+                                <input type="text" class="form-control input-sm" id="nameDeviseID" placeholder="Enter the name of the device">
+                            </div>
+                            <div class="form-group fg-line">
+                                <label for="exampleInputPassword1">Price/Week</label>
+                                <input type="text" class="form-control input-sm" id="priceDeviseID" placeholder="Price/Week">
+                            </div>
+                            <div class="form-group fg-line">
+                                <label for="exampleInputPassword1">Status</label>
+                               <select class="form-control input-sm" id="statusDeviseID">
+                                   <option value="Available">Available</option>
+                                   <option value="Not available">Not Available</option>
+                                   <option value="Rented">Rented</option>
+                                   <option value="Reserving for rent">Reseving for rent</option>
+                               </select>
+                            </div>
+                          
+
+                            <button type="submit" class="btn btn-primary btn-sm m-t-10 waves-effect" onclick="addDevise()">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </section>
+
+
+    </section>
+
+    <footer id="footer">
+        Copyright &copy; 2015 Material Admin
+
+        <ul class="f-menu">
+            <li><a href="">Home</a></li>
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Reports</a></li>
+            <li><a href="">Support</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </footer>
+
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="preloader pls-blue">
+            <svg class="pl-circular" viewBox="25 25 50 50">
+                <circle class="plc-path" cx="50" cy="50" r="20" />
+            </svg>
+
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <!-- Older IE warning message -->
+    <!--[if lt IE 9]>
+        <div class="ie-warning">
+            <h1 class="c-white">Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="img/browsers/chrome.png" alt="">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="img/browsers/firefox.png" alt="">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="img/browsers/opera.png" alt="">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="img/browsers/safari.png" alt="">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="img/browsers/ie.png" alt="">
+                            <div>IE (New)</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>Sorry for the inconvenience!</p>
+        </div>
+    <![endif]-->
+    <!-- Javascript Libraries -->
+    <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="vendors/bower_components/flot/jquery.flot.js"></script>
+    <script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+    <script src="vendors/bower_components/flot.curvedlines/curvedLines.js"></script>
+    <script src="vendors/sparklines/jquery.sparkline.min.js"></script>
+    <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+
+    <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+    <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js "></script>
+    <script src="vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js"></script>
+    <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+    <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+    <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+    <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+    <!-- Placeholder for IE9 -->
+    <!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="js/flot-charts/curved-line-chart.js"></script>
+    <script src="js/flot-charts/line-chart.js"></script>
+    <script src="js/charts.js"></script>
+
+    <script src="js/charts.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/demo.js"></script>
+   
+   
+
+ 
+
+
+</body>
+  </html>

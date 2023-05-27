@@ -1,0 +1,335 @@
+﻿<!DOCTYPE>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sales Services</title>
+
+        <!-- Vendor CSS -->
+        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+            
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+        <!-- Scripts -->
+
+
+
+ 
+
+    </head>
+    <body class="toggled sw-toggled">
+        <header id="header" class="clearfix" data-current-skin="blue">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="logo hidden-xs">
+                    <a href="index.html">sales Services</a>
+                </li>
+
+                <li class="pull-right">
+                    <ul class="top-menu">
+                        <li id="toggle-width">
+                            <div class="toggle-switch">
+                                <input id="tw-switch" type="checkbox" hidden="hidden">
+                                <label for="tw-switch" class="ts-helper"></label>
+                            </div>
+                        </li>
+
+                        <li id="top-search">
+                            <a href=""><i class="tm-icon zmdi zmdi-search"></i></a>
+                        </li>
+
+                     
+                        <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+                            <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!-- Top Search Content -->
+            <div id="top-search-wrap">
+                <div class="tsw-inner">
+                    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+                    <input type="text">
+                </div>
+            </div>
+        </header>
+        
+        <section id="main" data-layout="layout-1">
+                <aside id="sidebar" class="sidebar c-overflow">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                          <img src="media/img/profile-menu.png" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            Klaus Technicker
+
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href=""><i class="zmdi zmdi-account"></i> Data Synchronization</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> My info</a>
+                        </li>
+               
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    <li >
+                        <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                    </li>
+
+                    <li class="sub-menu toggled active">
+                        <a href=""><i class="zmdi zmdi-view-list"></i> Rental Devices</a>
+
+                        <ul>
+                            <li class="active"><a href="rentalDevice.html">Rental Devices</a></li>
+                            <li><a href="rentalContract.html">Rental Contracts</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </aside>
+
+         
+                <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                     
+
+                        <ul class="actions">
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-trending-up"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="">Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Manage Widgets</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Widgets Settings</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                Add a rental device
+                            </h2>
+                        </div>
+
+                        <div class="card-body card-padding">
+                            <form role="form">
+                                <div class="form-group fg-line">
+                                    <!--<label for="exampleInputEmail1">Name of the device</label>-->
+                                    <input type="text" class="form-control input-sm" id="nameDeviseID" placeholder="Devise name">
+                                </div>
+                                <div class="form-group fg-line">
+                                    <!--<label for="exampleInputPassword1">Price/Week</label>-->
+                                    <input type="text" class="form-control input-sm" id="priceDeviseID" placeholder="Price/Week">
+                                </div>
+                                <div class="form-group fg-line">
+
+                                    <!--<label>Status</label>-->
+
+                                 <select class="form-control input-sm"  id="statusDeviseID">
+                                        <option value="Available">Available</option>
+                                        <option value="Not Available">Not Available</option>
+                                        <option value="Rented">Rented</option>
+                                        <option value="Reserved for renting">Reserved for renting</option>
+                                    </select>
+                                </div>
+                              
+
+                                <a class="btn btn-primary btn-sm m-t-10 waves-effect" onclick="addDevise()">Submit</a>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+                            </div>
+                </section>
+
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2015 Material Admin
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+        
+      
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/demo.js"></script>
+
+        <!-- Scripts -->
+       <script src="./js/jaydata/knockout.js"></script>
+
+          <!-- jaydata and SqLite  Libraries -->
+          <script src="./js/jaydata/jaydata.js"></script>
+          <script src="./js/jaydata/datajs-1.1.2.js"></script>
+          <script src="./js/jaydata/jaydataknockout.js"></script>
+          <script src="./js/jaydata/SqLiteProProvider.js"></script>
+
+
+
+        <script type="text/javascript">
+
+
+            if (window.openDatabase) {
+
+                $data.Entity.extend("Devise", {
+                    id: { type: "guid", key: true, computed: true },
+                    name: { type: String, required: true },
+                    price: { type: "number", required: true },
+                    status: { type: String },
+                    contractDevises: { type: Array, elementType: "ContractDevise", inverseProperty: "Devise" }
+                });
+
+                $data.Entity.extend("Contract", {
+                    id: { type: "guid", key: true, computed: true },
+                    numberContract: { type: "number", required: true },
+                    startDate: { type: String, required: true },
+                    endDate: { type: String, required: true },
+                    personNumber: { type: "number", required: true },
+                    personName: { type: String, required: true },
+                    personTel: { type: String },
+                    personEmail: { type: String },
+                    personAddress: { type: String },
+                    personDelivery: { type: String },
+                    contractDevises: { type: Array, elementType: "ContractDevise", inverseProperty: "Contract" }
+                });
+
+                $data.Entity.extend("ContractDevise", {
+                    id: { type: "guid", key: true, computed: true },
+                    Devise: { type: "Devise", inverseProperty: "contractDevises" },
+                    Contract: { type: "Contract", inverseProperty: "contractDevises" }
+                });
+
+                var DeviseDB = $data.EntityContext.extend("DeviseDB", {
+                    DeviseTable: { type: $data.EntitySet, elementType: "Devise" },
+                    ContractTable: { type: $data.EntitySet, elementType: "Contract" },
+                    ContractDeviseTable: { type: $data.EntitySet, elementType: "ContractDevise" }
+                });
+
+                var db = new DeviseDB({ provider: "webSql", databaseName: "DeviseDB", dbCreation: $data.storageProviders.DbCreationType });
+                db.onReady(function () {
+
+                });
+            } else {
+                alert("WebSQL is not supported by your browser!");
+            }
+
+
+        
+                function addDevise() {
+                    if (db) {
+
+                        var name = document.getElementById("nameDeviseID").value;
+                        var price = document.getElementById("priceDeviseID").value;
+                        var status = document.getElementById("statusDeviseID").value;
+
+                        if (name !== "" && price !== "") {
+
+                          
+                            //var entity = new db.DeviseTable.Devise({ name: name, price: price, status: status });
+                            // db.DeviseTable.add(entity);
+
+                            db.DeviseTable.addMany([
+                                {
+                                    name: name,
+                                    price: price,
+                                    status: status
+                                }
+                            ]);
+
+
+                            db.saveChanges(function () {
+                                var rfe = [];
+                                //db.DeviseTable.forEach(function (x) { rfe.push(x); }).then(function () { renderResult("forEach", rfe); });
+                                db.DeviseTable.toArray(function (r) { renderResult("toArray", r); });
+                                //db.DeviseTable.first("", null, function (r) { renderResult("first", r); });
+
+                            });
+                           
+                           
+                        }
+                        else {
+                            alert("You must enter a name and price!");
+                        }
+                    } else {
+                        alert("db not found, your browser does not support web sql!");
+                    }
+                }
+        </script>
+    </body>
+  </html>

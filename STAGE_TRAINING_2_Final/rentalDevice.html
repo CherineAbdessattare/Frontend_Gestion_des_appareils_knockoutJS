@@ -1,0 +1,384 @@
+﻿<!DOCTYPE>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sales Services</title>
+
+        <!-- Vendor CSS -->
+        <link href="vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+        <link href="vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">        
+            
+        <!-- CSS -->
+        <link href="css/app.min.1.css" rel="stylesheet">
+        <link href="css/app.min.2.css" rel="stylesheet">
+        <!-- Scripts -->
+     
+ 
+
+    </head>
+    <body class="toggled sw-toggled">
+        <header id="header" class="clearfix" data-current-skin="blue">
+            <ul class="header-inner">
+                <li id="menu-trigger" data-trigger="#sidebar">
+                    <div class="line-wrap">
+                        <div class="line top"></div>
+                        <div class="line center"></div>
+                        <div class="line bottom"></div>
+                    </div>
+                </li>
+
+                <li class="logo hidden-xs">
+                    <a href="index.html">sales Services</a>
+                </li>
+
+                <li class="pull-right">
+                    <ul class="top-menu">
+                        <li id="toggle-width">
+                            <div class="toggle-switch">
+                                <input id="tw-switch" type="checkbox" hidden="hidden">
+                                <label for="tw-switch" class="ts-helper"></label>
+                            </div>
+                        </li>
+
+                        <li id="top-search">
+                            <a href=""><i class="tm-icon zmdi zmdi-search"></i></a>
+                        </li>
+
+                     
+                        <li class="hidden-xs" id="chat-trigger" data-trigger="#chat">
+                            <a href=""><i class="tm-icon zmdi zmdi-comment-alt-text"></i></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+            <!-- Top Search Content -->
+            <div id="top-search-wrap">
+                <div class="tsw-inner">
+                    <i id="top-search-close" class="zmdi zmdi-arrow-left"></i>
+                    <input type="text">
+                </div>
+            </div>
+        </header>
+        
+        <section id="main" data-layout="layout-1">
+                <aside id="sidebar" class="sidebar c-overflow">
+                <div class="profile-menu">
+                    <a href="">
+                        <div class="profile-pic">
+                          <img src="media/img/profile-menu.png" alt="">
+                        </div>
+
+                        <div class="profile-info">
+                            Klaus Technicker
+
+                            <i class="zmdi zmdi-caret-down"></i>
+                        </div>
+                    </a>
+
+                    <ul class="main-menu">
+                        <li>
+                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="main-menu">
+                    <li >
+                        <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                    </li>
+
+                    <li class="sub-menu toggled active">
+                        <a href=""><i class="zmdi zmdi-view-list"></i> Rental Devices</a>
+
+                        <ul>
+                            <li class="active"><a href="rentalDevice.html">Rental Devices</a></li>
+                            <li><a href="rentalContract.html">Rental Contracts</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                </aside>
+
+         
+                <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                     
+
+                        <ul class="actions">
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-trending-up"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="zmdi zmdi-check-all"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="" data-toggle="dropdown">
+                                    <i class="zmdi zmdi-more-vert"></i>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li>
+                                        <a href="">Refresh</a>
+                                    </li>
+                                    <li>
+                                        <a href="rentalDevice_add.html">Add Devise</a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>List of rental devices
+                                <small>This page contains a list of devices which are available for rental</small>
+                            </h2>
+                        </div>
+                        
+                       <div class="card-body card-padding">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="fg-line">
+                                            <input  data-bind="value: nameSearch, valueUpdate: 'afterkeydown'"  type="text" class="form-control" placeholder="Name"  />
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="fg-line">
+                                            <input  data-bind="value: priceSearch, valueUpdate: 'afterkeydown'"  type="text" class="form-control" placeholder="price/week">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="fg-line">
+                                            <div class="select">
+                                                <select data-bind="options: statusOptions, value: statusSearch" class="form-control input-sm">
+                                                    <option selected label="All"></option>
+                                        <option>available</option>
+                                        <option>reserved</option>
+                                        <option>rented</option>
+                                                </select>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+                                        </div>
+                                    </div>
+
+
+</div>
+                    
+                    <div class="card">
+                        <div class="listview lv-bordered lv-lg">
+                            <div class="lv-header-alt clearfix">
+                             
+                                <h2 class="lvh-label hidden-xs">Rental devices</h2>
+
+                <div class="lvh-search">
+                    <input type="text" placeholder="Start typing..." class="lvhs-input">
+
+                    <i class="lvh-search-close">&times;</i>
+                </div>
+
+                                <ul class="lv-actions actions">
+                                    <li>
+                                        <a href="" class="lvh-search-trigger">
+                                            <i class="zmdi zmdi-search"></i>
+                                        </a>
+                                    </li>
+
+                                    <!--<li>
+                        <a href="">
+                            <i class="zmdi zmdi-time"></i>
+                        </a>
+                    </li>-->
+                                    <li class="dropdown">
+                                        <a href="" data-toggle="dropdown" aria-expanded="true">
+                                            <i class="zmdi zmdi-sort"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-right">
+
+                                            <li>
+                                                <a href="">Name</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Price/week</a>
+                                            </li>
+                                            <li>
+                                                <a href="">Status</a>
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    <!--<li>
+                        <a href="">
+                            <i class="zmdi zmdi-info"></i>
+                        </a>
+                    </li>-->
+                                    <li class="dropdown">
+                                        <a href="" data-toggle="dropdown" aria-expanded="true">
+                                            <i class="zmdi zmdi-more-vert"></i>
+                                        </a>
+
+                                        <ul class="dropdown-menu dropdown-menu-right">
+                                            <li>
+                                                <a href="">Refresh</a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="lv-body" data-bind="foreach: filteredDevices">
+
+                                <div class="lv-item media">
+                                    <!--<div class="checkbox pull-left">
+                        <label>
+                            <input type="checkbox" value="">
+                            <i class="input-helper"></i>
+                        </label>
+                    </div>-->
+                                   
+                                    <div class="media-body">
+                                        <div class="lv-title" ></div>
+                                        <!--<small class="lv-small"> </small>-->
+                                        <ul class="lv-attrs">
+                                            <li>Name: <span data-bind="text: name"></span></li>
+                                            <li>Price/week : <span data-bind="text: price"></span> $</li>
+                                            <li>status: <span data-bind="text: status"></span></li>
+                                        </ul>
+                                        <div class="lv-actions actions dropdown">
+                                            <a href="" data-toggle="dropdown" aria-expanded="true">
+                                                <i class="zmdi zmdi-more-vert"></i>
+                                            </a>
+
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li>
+                                    <a href="">Edit</a>
+                                </li>
+                                <li>
+                                    <a href="">Delete</a>
+                                </li>
+                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        
+
+                            </div>
+
+                        </div>
+
+                        <ul class="pagination lv-pagination">
+                            <li>
+                                <a href="" aria-label="Previous">
+                                    <i class="zmdi zmdi-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="active"><a href="rentalDevice.html">1</a></li>
+                            <li><a href="rentalContract.html">2</a></li>
+                            <!-- <li><a href="">3</a></li>
+                            <li><a href="">4</a></li>
+                            <li><a href="">5</a></li> -->
+                            <li>
+                                <a href="" aria-label="Next">
+                                    <i class="zmdi zmdi-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+
+                     
+
+
+
+
+
+
+                    </div>
+
+
+                            </div>
+                </section>
+
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2015 Material Admin
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Dashboard</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+        
+        <!-- Javascript Libraries -->
+        <script src="vendors/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script src="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="vendors/bower_components/Waves/dist/waves.min.js"></script>
+        <script src="vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+        <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/demo.js"></script>
+
+        <!-- knockout Libraries -->
+        <script type='text/javascript' src="./js/jaydata/knockout.js"></script>
+        <!-- jaydata and SqLite  Libraries -->
+        <script src="./js/jaydata/jaydata.js"></script>
+        <script src="./js/jaydata/datajs-1.1.2.js"></script>
+        <script src="./js/jaydata/jaydataknockout.js"></script>
+        <script src="./js/jaydata/SqLiteProProvider.js"></script>
+        
+
+        <script src="js/rentalDevise.js"></script>
+    
+
+        
+    </body>
+  </html>
